@@ -35,7 +35,7 @@ void draw()
   line(startX, startY, newX, newY);
   
   if((startX > 200 && startX < 350) && ((startY < 400 && startY > 250) || (newX > 200 && newX < 360) && (newY < 400 && newY > 250))){
-    System.out.println("HIT" + newX);
+
     fill(216,200,55);
     //rect(200,375,175,375);
     triangle(165,714,243+(int)(Math.random()*10),327+(int)(Math.random()*10),323,665);
@@ -67,7 +67,7 @@ void mousePressed()
     clouds(x,40+(int)(Math.random()*40)-20);
   }
   person();
-  System.out.println(mouseX + ", " + mouseY);
+
   redraw();
 }
 
