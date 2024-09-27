@@ -32,7 +32,7 @@ void draw()
   line(startX, startY, newX, newY);
 
   if ((startX > 200 && startX < 350) && ((startY < 400 && startY > 250) || (newX > 200 && newX < 360) && (newY < 400 && newY > 250))) {
-    System.out.println("HIT" + newX);
+    
     fill(216, 200, 55);
     //rect(200,375,175,375);
     triangle(165, 714, 243+(int)(Math.random()*10), 327+(int)(Math.random()*10), 323, 665);
@@ -40,8 +40,8 @@ void draw()
     triangle(134, 557, 340, 772, 322, 315);
     person();
     fill(255, 255, 255);
-    ellipse(300-25, 400-25, 35/2, 25/2);
-    ellipse(300+25, 400-25, 35/2, 25/2);
+    ellipse(300-25, 400-25, 18, 13);
+    ellipse(300+25, 400-25, 18, 13);
   }
 
   startX = newX;
@@ -84,7 +84,7 @@ void person() {
   line(300, 597, 240, 671);
   line(300, 597, 356, 656);
   strokeWeight(1);
-  //187, 287, >> 300 400
+ 
   //ellipse(300, 400, 60, 60);
   smiley(300,400);
 }
@@ -106,8 +106,8 @@ void smiley(int x, int y) {
 
   if (chance < 25) {
     fill(255, 255, 255);
-    ellipse(x-25, y-25, 35/2, 25/2);
-    ellipse(x+25, y-25, 35/2, 25/2);
+    ellipse(x-25, y-25, 18, 13);
+    ellipse(x+25, y-25, 18, 13);
   }
   //mouth
   fill((int)(Math.random()*256), 0, 0);
