@@ -3,6 +3,7 @@ int startY = 0;
 
 void setup()
 {
+
   size(800, 800);
   background(129, 128, 112);
   fill(108, 184, 198);
@@ -12,9 +13,12 @@ void setup()
     clouds(x, 40);
   }
 }
+boolean hit = false;
 void draw()
 {
-
+  //rect(200,250,150,150);
+//223,358,385,676
+//rect(223,358,162,291);
   strokeWeight(10);
   int newX = startX + (int)(Math.random()*20);
   int newY = startY + (int)(Math.random()*75);
@@ -28,11 +32,19 @@ void draw()
     newY = startY + (int)(Math.random()*100);
   }
   strokeWeight((int)(Math.random()*4)+10);
+  
 
   line(startX, startY, newX, newY);
 
-  if ((startX > 200 && startX < 350) && ((startY < 400 && startY > 250) || (newX > 200 && newX < 360) && (newY < 400 && newY > 250))) {
-    
+  if ((startX >= 223 && startX <= 385) && ((startY <= 676 && startY >= 358) || (newX >= 223 && newX <= 385) && (newY <= 676 && newY >= 358))) {
+    hit = true;
+   
+  }
+  if (hit == true){
+    if((int)(Math.random()*2)>=1){
+      stroke(216,209,55);
+    }else{stroke(206,201,96);}
+  
     fill(216, 200, 55);
     //rect(200,375,175,375);
     triangle(165, 714, 243+(int)(Math.random()*10), 327+(int)(Math.random()*10), 323, 665);
@@ -40,8 +52,8 @@ void draw()
     triangle(134, 557, 340, 772, 322, 315);
     person();
     fill(255, 255, 255);
-    ellipse(300-25, 400-25, 18, 13);
-    ellipse(300+25, 400-25, 18, 13);
+    ellipse(300-25, 400-25, 17, 13);
+    ellipse(300+25, 400-25, 17, 13);
   }
 
   startX = newX;
@@ -51,6 +63,7 @@ void draw()
 
 void mousePressed()
 {
+  hit = false;
 
   startX = mouseX;
   startY = 0;
@@ -66,7 +79,7 @@ void mousePressed()
     clouds(x, 40+(int)(Math.random()*40)-20);
   }
   person();
-  System.out.println(mouseX + ", " + mouseY);
+  //System.out.println(mouseX + ", " + mouseY);
   redraw();
 }
 
@@ -84,7 +97,7 @@ void person() {
   line(300, 597, 240, 671);
   line(300, 597, 356, 656);
   strokeWeight(1);
- 
+  //187, 287, >> 300 400
   //ellipse(300, 400, 60, 60);
   smiley(300,400);
 }
@@ -106,8 +119,8 @@ void smiley(int x, int y) {
 
   if (chance < 25) {
     fill(255, 255, 255);
-    ellipse(x-25, y-25, 18, 13);
-    ellipse(x+25, y-25, 18, 13);
+    ellipse(x-25, y-25, 17, 13);
+    ellipse(x+25, y-25, 17, 13);
   }
   //mouth
   fill((int)(Math.random()*256), 0, 0);
